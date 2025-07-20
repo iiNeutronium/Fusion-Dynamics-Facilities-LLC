@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(222, 84%, 5%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(222, 84%, 15%);
+  --muted-foreground: hsl(0, 0%, 60%);
+  --popover: hsl(222, 84%, 5%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(222, 84%, 5%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(222, 84%, 15%);
+  --input: hsl(222, 84%, 15%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(222, 84%, 15%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(222, 84%, 15%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(207, 90%, 54%);
+  --radius: 0.5rem;
+  
+  /* Custom electric colors */
+  --electric-blue: hsl(207, 90%, 54%);
+  --electric-cyan: hsl(189, 94%, 43%);
+  --electric-purple: hsl(258, 90%, 66%);
+  --dark-space: hsl(222, 84%, 5%);
+  --space-gray: hsl(215, 28%, 17%);
+}
+
+.dark {
+  --background: hsl(222, 84%, 5%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(222, 84%, 15%);
+  --muted-foreground: hsl(0, 0%, 60%);
+  --popover: hsl(222, 84%, 5%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(222, 84%, 5%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(222, 84%, 15%);
+  --input: hsl(222, 84%, 15%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(222, 84%, 15%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(222, 84%, 15%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(207, 90%, 54%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .electric-blue {
+    color: var(--electric-blue);
+  }
+  
+  .electric-cyan {
+    color: var(--electric-cyan);
+  }
+  
+  .electric-purple {
+    color: var(--electric-purple);
+  }
+  
+  .bg-electric-blue {
+    background-color: var(--electric-blue);
+  }
+  
+  .bg-electric-cyan {
+    background-color: var(--electric-cyan);
+  }
+  
+  .bg-electric-purple {
+    background-color: var(--electric-purple);
+  }
+  
+  .bg-dark-space {
+    background-color: var(--dark-space);
+  }
+  
+  .bg-space-gray {
+    background-color: var(--space-gray);
+  }
+  
+  .border-electric-blue {
+    border-color: var(--electric-blue);
+  }
+  
+  .border-electric-cyan {
+    border-color: var(--electric-cyan);
+  }
+  
+  .border-electric-purple {
+    border-color: var(--electric-purple);
+  }
+  
+  .text-electric-blue {
+    color: var(--electric-blue);
+  }
+  
+  .text-electric-cyan {
+    color: var(--electric-cyan);
+  }
+  
+  .text-electric-purple {
+    color: var(--electric-purple);
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+}
+
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(14, 165, 233, 0.8);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
